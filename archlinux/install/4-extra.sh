@@ -6,6 +6,9 @@
 #                  Package manager basic configuration
 # -----------------------------------------------------------------------------
 sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
+sed -i 's/^#Color/Color/' /etc/pacman.conf
+sed -i '/^Color/a ILoveCandy' /etc/pacman.conf
+pacman -Syy
 
 
 
@@ -37,6 +40,7 @@ systemctl enable reflector.timer
 
 # paccache
 pacman -S --noconfirm pacman-contrib
+systemctl enable paccache.timer
 
 
 
@@ -47,6 +51,8 @@ pacman -S --noconfirm neovim sudo bash-completion mlocate man-db man-pages pkgfi
 
 
 
-
-
-envars() {}
+# -----------------------------------------------------------------------------
+#                  Environment variables
+# -----------------------------------------------------------------------------
+# editor
+echo "EDITOR=nvim" > /etc/environment && echo "VISUAL=nvim" >> /etc/environment
