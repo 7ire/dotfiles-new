@@ -85,3 +85,12 @@ print_success "[2] - Base system is installed!"
 print_info "[3] - Creating new user ..."
 ./install/3-user.sh
 print_success "[3] - User is created!"
+
+print_info "[4] - Configuring extra options ..."
+./install/4-extra.sh
+print_success "[4] - Extra options are configured!"
+
+print_success "Arch Linux installation is completed!"
+exit
+umount -R /mnt
+reboot
