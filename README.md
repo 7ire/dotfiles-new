@@ -1,0 +1,7 @@
+- [dwarmstrong/A(rch) to Z(ram): Install Arch Linux with (almost) full disk encryption and BTRFS](https://www.dwarmstrong.org/archlinux-install/)
+- [dwarmstrong/BTRFS snapshots and system rollbacks on Arch Linux](https://www.dwarmstrong.org/btrfs-snapshots-rollbacks/)
+- [dwarmstrong/Zram swap on Arch Linux](https://www.dwarmstrong.org/zram-swap/)
+- [ChrisTitusTech/ArchTitus](https://github.com/ChrisTitusTech/ArchTitus/tree/main)
+- [Ataraxxia/secure-arch](https://github.com/Ataraxxia/secure-arch)
+- [Giacomo Coletto/My quality of life improvements to Arch Linux](https://giacomo.coletto.io/blog/arch-conf/)
+- [reddit/Adding new backgrounds to the "backgrounds" folder](https://www.reddit.com/r/gnome/comments/t7dx5g/adding_new_backgrounds_to_the_backgrounds_folder/)
