@@ -42,13 +42,18 @@ systemctl enable reflector.timer
 pacman -S --noconfirm pacman-contrib
 systemctl enable paccache.timer
 
+# fstrim - improves SSD performance
+pacman -S --noconfirm util-linux
+systemctl enable fstrim.timer
+
 
 
 # -----------------------------------------------------------------------------
 #                  Extra packages
 # -----------------------------------------------------------------------------
-pacman -S --noconfirm neovim sudo bash-completion mlocate man-db man-pages pkgfile util-linux
-
+pacman -S --noconfirm neovim sudo bash-completion mlocate man-db man-pages pkgfile
+updatedb
+pkgfile --update
 
 
 # -----------------------------------------------------------------------------
