@@ -1,6 +1,6 @@
 #!/bin/bash
 
-username=""
+user=""
 swapsize="16G"
 
 # Free sudo

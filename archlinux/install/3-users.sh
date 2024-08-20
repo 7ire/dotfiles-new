@@ -1,13 +1,15 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-users() {
-  # root password
-  passwd
+# -----------------------------------------------------------------------------
+#                  Users
+# -----------------------------------------------------------------------------
 
-  # add user
-  useradd -m -G wheel -s /bin/bash $username
-  passwd $username
+# root password
+passwd
 
-  # active 'wheel' group for 'sudo'
-  sed -i "s/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/" /etc/sudoers
-}
+# add user
+useradd -m -G wheel -s /bin/bash $username
+passwd $username
+
+# active 'wheel' group for 'sudo'
+sed -i "s/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/" /etc/sudoers
