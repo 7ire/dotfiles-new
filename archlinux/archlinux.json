@@ -1,0 +1,26 @@
+{
+    "username": "",
+    "hostname": "",
+    "disk": {
+        "target": "",
+        "filesystem": "",
+        "fill_rnd_data": false,
+        "espsize": "1024MiB",
+        "cryptdev": true
+    },
+    "locale": {
+        "lang": "en_US.UTF-8",
+        "keymap": "it",
+        "timezone": "Europe/Rome"
+    },
+    "microcode": "",
+    "desktop": {
+        "de": "gnome",
+        "wm": "hyprland",
+        "wallpaper": {
+            "default": false,
+            "url": ""
+        }
+    },
+    "dotfiles": ""
+}
