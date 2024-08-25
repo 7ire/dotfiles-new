@@ -1,29 +1,45 @@
 #!/usr/bin/env bash
 
-# Parameters value
+# ==============================================================================
+#                               PARAMETERS
+# ==============================================================================
+# No parameters for this script, all actions are performed on the system.
 
-# =============================================================================
-
-# update system
+# ==============================================================================
+#                               SYSTEM UPDATE
+# ==============================================================================
+# Update the system packages and synchronize package databases
 sudo pacman -Syyu --noconfirm &> /dev/null
 
-# check for failed services
+# ==============================================================================
+#                           CHECK SYSTEM STATUS
+# ==============================================================================
+# Check for failed services
 systemctl --failed
+
+# Review system logs for critical errors
 journalctl -p 3 -xb
 
-# Command: 'locate'
+# ==============================================================================
+#                           INSTALL AND CONFIGURE UTILITIES
+# ==============================================================================
+# Install 'locate' command and update its database
 sudo pacman -S --noconfirm mlocate &> /dev/null
 sudo updatedb &> /dev/null
 
-# Command-not-found
+# Install 'pkgfile' for command-not-found support
 sudo pacman -S --noconfirm pkgfile &> /dev/null
 sudo pkgfile --update &> /dev/null
-BASHRC="$HOME/.bashrc"  # path of ~/.bashrc
+
+# Add command-not-found support to ~/.bashrc if not present
+BASHRC="$HOME/.bashrc"
 CONTENT='
+# Command-not-found support for pkgfile
 if [[ -f /usr/share/doc/pkgfile/command-not-found.bash ]]; then
     . /usr/share/doc/pkgfile/command-not-found.bash
 fi
 '
+
 if ! grep -q "/usr/share/doc/pkgfile/command-not-found.bash" "$BASHRC"; then
-    echo "$CONTENT" >> "$BASHRC"  # add to ~/.bashrc
+    echo "$CONTENT" >> "$BASHRC"
 fi
