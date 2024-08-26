@@ -1,19 +1,37 @@
 {
-    "username": "",
     "hostname": "",
-    "disk": {
-        "target": "",
-        "filesystem": "",
-        "fill_rnd_data": false,
-        "espsize": "1024MiB",
-        "cryptdev": true
-    },
+
     "locale": {
-        "lang": "en_US.UTF-8",
+        "lang": "it_IT.UTF-8",
         "keymap": "it",
         "timezone": "Europe/Rome"
     },
+
+    
+    "disk": {
+        "target": "",
+        "is_ssd": true,
+        "filesystem": "btrfs",
+        "fill_rnd_data": false,
+        "espsize": "1024MiB",
+        "cryptdev": true,
+        "cryptdev-pwd": ""
+    },  
+    "swap": {
+        "enable": "true",
+        "size": "16G"
+    },
+
     "microcode": "",
+    "bootloader": "grub",
+
+    "user": {
+        "root-pwd": "",
+        "username": "",
+        "pass": ""
+    },
+    
+    "aur": "paru",
     "desktop": {
         "de": "gnome",
         "wm": "hyprland",
@@ -22,5 +40,6 @@
             "url": ""
         }
     },
-    "dotfiles": ""
+    "dotfiles": "",
+    "extra-pkgs": []
 }
