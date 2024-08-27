@@ -19,7 +19,7 @@ sudo ln -sf /dev/null /etc/udev/rules.d/61-gdm.rules
 # Enable Wayland in GDM
 sudo sed -i 's/^#WaylandEnable=false/WaylandEnable=true/' /etc/gdm/custom.conf
 
-# GNOME Keybinds
+# GNOME Keybinds„
 KEYS_GNOME_WM=/org/gnome/desktop/wm/keybindings
 KEYS_GNOME_SHELL=/org/gnome/shell/keybindings
 KEYS_MUTTER=/org/gnome/mutter/keybindings

@@ -8,7 +8,7 @@
 # ==============================================================================
 #                           INSTALL REQUIRED PACKAGES
 # ==============================================================================
-sudo pacman -S --noconfirm cups bluez-cups cups-pdf &> /dev/null
+sudo pacman -S --noconfirm cups cups-pdf &> /dev/null
 
 # ==============================================================================
 #                          ACTIVATE AND ENABLE SERVICES
