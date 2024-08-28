@@ -1,0 +1,47 @@
+# Arch Linux global configuration
+#
+# In this file you can set and override
+# configuration options for Arch Linux.
+#
+# The main options are available:
+#
+# - hostname: The hostname of the machine
+
+hostname: archlinux
+
+disk:
+  device: /dev/nvme0n1
+  is_nvme: true
+  encrypt:
+    - is_use: true
+    - type: lusk2
+    - label: cryptdev
+    - password: password
+  partitions:
+    - boot:
+        name: esp
+        size: 1024MiB
+        mount: /esp
+    - root:
+        name: archlinux
+        filesystem: btrfs
+        size: 100%
+        mount: /
+        subvolumes:
+          - home:
+              mount: home
+          - snapshots:
+              mount: .snapshots
+          - cache:
+              mount: var/cache
+          - log:
+              mount: var/log
+          - libvirt:
+              mount: var/lib/libvirt
+          - docker:
+              mount: var/lib/docker
+          - tmp:
+              mount: var/tmp
+  swap:
+    - is_use: true
+    - size: 16GiB
